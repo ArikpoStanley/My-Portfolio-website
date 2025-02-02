@@ -197,7 +197,7 @@ const handlebtn5 = (e)=>{
               <div className='text-black rounded-2xl flex flex-col shadow-md shadow-gray-700 cursor-pointer p-4 hover:scale-150 transition duration-500 bg-white ' ref={t2}>
                 <img className=' hover:bg-purple-300' src={s2} alt="" />
                 <p className='font-bold'>School Management System</p>
-                <a href="https://myskullapp.netlify.app" className='font-bold hover:text-purple-600 text-blue-600  '>View in browser</a>
+                <a href="https://myskullapp.netlify.app" className='font-bold hover:text-purple-600 text-blue-600 '>View in browser</a>
               </div>
               <div className='text-black rounded-2xl shadow-md shadow-gray-700 cursor-pointer p-4 hover:scale-150 transition duration-500 bg-white ' ref={t3}>
                 <img className=' hover:bg-purple-300' src={s4} alt="" />

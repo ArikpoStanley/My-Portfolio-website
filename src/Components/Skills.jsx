@@ -23,6 +23,38 @@ const Skills = () => {
       items: 1
     }
   };
+
+  const skills = [
+    {title: "Next js", percent: "90%"},
+    {title: "Recoil", percent: "93%"},
+    {title: "Nuxt js", percent: "87%"},
+    {title: "Nest js", percent: "88%"},
+    {title: "Node js", percent: "91%"},
+    {title: "Tailwind CSS", percent: "95%"},
+    {title: "Builder.io", percent: "68%"},
+    {title: "Groovy & Grails", percent: "94%"},
+    {title: "Bubble.io", percent: "93%"},
+    {title: "Shopify", percent: "80%"},
+    {title: "Tiks/PGF", percent: "87%"},
+    {title: "D3.js", percent: "85%"},
+    {title: "Wordpress", percent: "88%"},
+    {title: "Three.js", percent: "78%"},
+    {title: "Typescript", percent: "87%"},
+    {title: "Express", percent: "80%"},
+    {title: "React js", percent: "94%"},
+    {title: "AWS", percent: "96%"},
+    {title: "S3 Bucket", percent: "90%"},
+    {title: "Tanstack query", percent: "87%"},
+    {title: "GraphQL", percent: "80%"},
+    {title: "Redux", percent: "92%"},
+    {title: "ShadCn", percent: "89%"},
+    {title: "Angular js", percent: "88%"},
+    {title: "Vue js", percent: "95%"},
+    {title: "Context API", percent: "95%"},
+    {title: "PHP/Laravel", percent: "94%"},
+    {title: "SQL", percent: "96%"},
+    {title: "PostgreSQL js", percent: "75%"},
+  ]
   return (
     <div className='text-white flex items-center justify-center py-28 bg-[url("/src/assets/portfolio-img2.png")] h-screen'>
       <div className='container bg-gray-900 mx-auto rounded-2xl pt-8'>
@@ -31,57 +63,16 @@ const Skills = () => {
        <h1 className='font-extrabold text-3xl mb-10 underline'>Skills</h1>
         <p className='items-center font-bold'>Over the years i have accumulated by virtue of experience a 
         number of skills that have proven to be very helpful and of great assistance and
-         application to both to life and my tech career. Some of which are...</p>
+         application both to life and my tech career. Some of which are...</p>
        </div>
-          <Carousel  centerMode responsive={responsive} infinite={true} className='skill-slider pb-10 flex items-center justify-center pr-[124px] ' >
-          <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold  ' data-aos="fade-down" data-aos-duration="2000">80% </div>
-          <span className='ml-7 font-bold '>UI/UX</span>
-        </div>
-        <div>
-          <div className='border-8 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">92%</div>
-          <span className='ml-5 font-bold '>Javascript</span>
-        </div>
-        <div>
-          <div className='border-8 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">95%</div>
-          <span className='font-bold ml-4'>Typescript</span>
-        </div>
-        <div>
-          <div className='border-8 ml-3 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">95%</div>
-          <span className='font-bold '>Web Development</span>
-        </div>
-        <div>
-          <div className='border-8 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className='ml-1 font-bold '>Bootstrap CSS</span>
-        </div>
-        <div>
-          <div className='border-8 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className=' font-bold ml-2'>RESTful APIs</span>
-        </div>
-        <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className='font-bold'>Mongoose</span>
-        </div>
-        <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className=' font-bold ml-6'>Node Js</span>
-        </div>
-        <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className='ml-5 font-bold '>Express Js</span>
-        </div>
-        <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold '>90%</div>
-          <span className='ml-10 font-bold '>SQL</span>
-        </div>
-        <div>
-          <div className='border-8  border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">90%</div>
-          <span className=' font-bold ml-3'>Typescript</span>
-        </div>
-        <div>
-          <div className='border-8 ml-2 border-fuchsia-800 rounded-full w-28 h-28 p-6 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">90%</div>
-          <span className='font-bold'>React Bootstrap</span>
-        </div>
+          <Carousel  centerMode responsive={responsive} infinite={true} className='skill-slider pb-10 flex items-center justify-center ' >
+         {skills?.map((skill, index)=>(
+           <div key={index} className='place-items-center'>
+           <div className='border-8 plac border-fuchsia-800 rounded-full w-28 h-28 p-6 pr-2 text-2xl font-extrabold ' data-aos="fade-down" data-aos-duration="2000">{skill?.percent} </div>
+           <p className='font-bold '>{skill?.title}</p>
+       </div>
+         ))}
+     
           </Carousel>
         </div>
         
