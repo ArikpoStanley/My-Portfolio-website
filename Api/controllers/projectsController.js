@@ -1,4 +1,4 @@
-const Project = require("../models/Projects");
+const Projects = require("../models/Projects");
 const { StatusCodes } = require("http-status-codes");
 const nodemailer = require("nodemailer");
 const path = require("path");
@@ -26,7 +26,7 @@ const create = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const project = await Project.create({ image, url, title, githubLink, status });
+    const project = await Projects.create({ image, url, title, githubLink, status });
 
     res.status(201).json({
       message: "Project added successfully",
@@ -77,8 +77,19 @@ const download = async (req, res) => {
   }
 }
 
+const fetch = async (req, res) => {
+  try {
+   const response = await Projects.find()
+   res.status(200).json(response)
+  } catch (error) {
+    console.error("Unexpected error:", error);
+    res.status(500).json({ message: "Error fetching projects" });
+  }
+}
+
 module.exports = {
   sendEmail,
   create,
   download,
+  fetch
 };

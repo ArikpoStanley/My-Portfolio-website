@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const router = express.Router();
-const { create, sendEmail, download } = require("../controllers/projectsController");
+const { create, sendEmail, download, fetch} = require("../controllers/projectsController");
 const path = require("path");
 const fs = require("fs");
 
@@ -36,5 +36,6 @@ const upload = multer({ storage, fileFilter });
 router.post("/create", upload.single("image"), create);
 router.post("/email", sendEmail);
 router.get("/download", download);
+router.get("/fetch", fetch);
 
 module.exports = router;
