@@ -8,12 +8,11 @@ import { TypeAnimation } from 'react-type-animation'
 import CountUp from 'react-countup'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaLinkedin, FaGithub,} from 'react-icons/fa'
 import { message } from 'antd'
-import axios from "axios"
 
 const Hero = () => {
     const download = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/v1/project/download", {
+        const response = await fetch("http://localhost:3003/api/v1/project/download", {
           method: "GET",
         });
   

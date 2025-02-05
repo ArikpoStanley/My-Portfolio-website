@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "proxy": "http://localhost:3000",
+    "proxy": "http://localhost:3003",
     "start": "npm-run-all --parallel server startReact ",
     "dev": "vite",
     "build": "vite build",

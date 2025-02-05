@@ -13,7 +13,7 @@ const Contact = () => {
      
       const handleSubmit =(e)=>{
         e.preventDefault()
-      axios.post('http://localhost:5000/api/v1/project/email', feedback)
+      axios.post('http://localhost:3003/api/v1/project/email', feedback)
       .then((response)=>{
         mess.success(response?.data?.message)
         setEmail("")

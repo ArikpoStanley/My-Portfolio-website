@@ -16,24 +16,22 @@ const Admin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     const formData = new FormData();
     if (selectedFile) {
-      formData.append("image", selectedFile); // Attach file if exists
+      formData.append("image", selectedFile);
     }
     formData.append("title", title);
     formData.append("url", url);
     formData.append("githubLink", githubLink);
     formData.append("status", status);
-
+  
     try {
-      const response = await fetch("http://localhost:5000/api/v1/project/create", {
+      const response = await fetch("http://localhost:3003/api/v1/project/create", {
         method: "POST",
         body: formData,
       });
-
-      console.log(response)
-
+  
       const data = await response.json();
       console.log("Server Response:", data);
       message.success("Project successfully added!");
@@ -42,6 +40,7 @@ const Admin = () => {
       message.error("Failed to submit project.");
     }
   };
+  
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
